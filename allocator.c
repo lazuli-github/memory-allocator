@@ -157,7 +157,7 @@ look_for_region(arena_t *arena, size_t needed_space)
 
 	region = (char *) block + block->size;
 	/* There is enough space after all blocks. */
-	if ((char *) region + needed_space < (char *) arena + arena_size)
+	if ((char *) region + needed_space <= (char *) arena + arena_size)
 		return region;
 
 	return NULL;
