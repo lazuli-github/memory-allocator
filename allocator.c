@@ -103,11 +103,11 @@ new_arena(size_t num_pages)
 	arena.first_block = NULL;
 
 	arena_p = mmap(NULL,
-	                 arena.num_pages * PAGE_SIZE,
-	                 PROT_READ | PROT_WRITE,
-	                 MAP_PRIVATE | MAP_ANONYMOUS,
-	                 -1,
-	                 0);
+	               arena.num_pages * PAGE_SIZE,
+	               PROT_READ | PROT_WRITE,
+	               MAP_PRIVATE | MAP_ANONYMOUS,
+	               -1,
+	               0);
 	if (arena_p == MAP_FAILED)
 		return NULL;
 	memcpy(arena_p, &arena, sizeof(arena));
